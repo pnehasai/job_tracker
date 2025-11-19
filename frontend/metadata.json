@@ -1,0 +1,5 @@
+
+{
+  "name": "React Job Tracker",
+  "description": "A comprehensive job application tracking system built with React and Tailwind CSS, allowing users to manage applications, track statuses, and schedule interviews. Features a separate dashboard for administrators to manage companies and roles."
+}
