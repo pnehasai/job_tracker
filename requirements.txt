@@ -1,1 +1,12 @@
-mysql-connector-python==8.1.0 
+Needs mysql-connector-python==8.1.0 
+1. Open MySQL workbench and import the job_tracker.sql
+2. Powershell for backend
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+3. npm install express cors body-parser mysql2 dotenv socket.io
+4. npm run dev 
+5. Powershell for frontend
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+6. npm install socket.io
+7. npm run dev
