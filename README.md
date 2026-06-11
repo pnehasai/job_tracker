@@ -11,17 +11,165 @@ A comprehensive job application tracking system with MySQL backend and Python UI
 - Admin dashboard
 
 ## Tech Stack
-- **Backend**: MySQL
-- **Frontend**: Python (Terminal UI)
-- **Database**: MySQL with stored procedures, functions, and triggers
 
-## Quick Start
+### Frontend
+- React
+- TypeScript
+- Vite
+- Socket.IO Client
 
-### Database Setup
-1. Run `database/job_tracker.sql` in MySQL Workbench
+### Backend
+- Node.js
+- Express.js
+- Socket.IO
 
-### Python UI Setup
+### Database
+- MySQL
+
+### Database Features
+- Stored Procedures
+- Functions
+- Triggers
+
+## Project Structure
+
+```plaintext
+job-tracker/
+│
+├── frontend/          # React + TypeScript frontend
+│
+├── backend/           # Node.js + Express backend
+│   ├── server.js
+│   ├── package.json
+│   └── package-lock.json
+│
+├── job_tracker.sql    # MySQL database schema
+└── README.md
+```
+
+## Database Setup
+
+1. Open MySQL Workbench.
+2. Create a database named:
+
+```sql
+CREATE DATABASE job_tracker;
+```
+
+3. Import:
+
+```plaintext
+job_tracker.sql
+```
+
+4. Verify that all tables are created successfully.
+
+---
+
+## Backend Setup
+
+Open PowerShell:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+Navigate to the backend folder:
+
 ```bash
-cd python_ui
-pip install -r requirements.txt
-python job_tracker_ui.py
+cd backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the backend:
+
+```bash
+npm run dev
+```
+
+Backend runs on:
+
+```plaintext
+http://localhost:4000
+```
+
+---
+
+## Frontend Setup
+
+Open another PowerShell:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+Navigate to the frontend folder:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the frontend:
+
+```bash
+npm run dev
+```
+
+Frontend runs on:
+
+```plaintext
+http://localhost:5173
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file inside the `backend` folder:
+
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=job_tracker
+DB_PORT=3306
+PORT=4000
+```
+
+---
+
+## Real-Time Notifications
+
+The application uses **Socket.IO** for real-time notifications.
+
+When an admin creates a notification, the backend automatically pushes it to the corresponding user without requiring a page refresh.
+
+---
+
+## API Health Check
+
+Endpoint:
+
+```http
+GET /api/health
+```
+
+Expected Response:
+
+```json
+{
+  "ok": true,
+  "db": true
+}
+```
